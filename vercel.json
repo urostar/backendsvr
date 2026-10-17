@@ -1,27 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "services": {
-    "app": {
-      "root": ".",
-      "framework": "flask"
-    },
-    "backend": {
-      "root": "backend",
-      "runtime": "python"
-    }
-  },
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": {
-        "service": "backend"
-      }
-    },
-    {
-      "source": "/(.*)",
-      "destination": {
-        "service": "app"
-      }
-    }
-  ]
+  "framework": null,
+  "outputDirectory": "public",
+  "functions": {
+    "api/index.py": { "maxDuration": 60 }
+  }
 }
