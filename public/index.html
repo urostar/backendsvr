@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#2F5BD3">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>오늘공부 체크</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📒</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <a class="brand" href="#/" aria-label="홈으로">
+        <span class="brand-mark" aria-hidden="true">✎</span>
+        <span id="appName">오늘공부 체크</span>
+      </a>
+      <button class="child-chip" id="childChip" type="button" hidden></button>
+    </header>
+
+    <nav class="nav" id="nav" aria-label="주 메뉴" hidden>
+      <a href="#/" data-route="home"><span class="ico" aria-hidden="true">🏠</span><span>홈</span></a>
+      <a href="#/upload" data-route="upload"><span class="ico" aria-hidden="true">📷</span><span>공부 올리기</span></a>
+      <a href="#/review" data-route="review"><span class="ico" aria-hidden="true">🎯</span><span>집중 복습</span><b class="badge" id="reviewBadge" hidden></b></a>
+      <a href="#/history" data-route="history"><span class="ico" aria-hidden="true">📚</span><span>기록</span></a>
+    </nav>
+
+    <main class="main" id="view" tabindex="-1">
+      <div class="loading-block"><span class="spinner"></span></div>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <div class="overlay" id="overlay" hidden>
+    <div class="overlay-card">
+      <svg class="pencil" viewBox="0 0 120 40" aria-hidden="true">
+        <path class="scribble" d="M5 30 C 20 5, 35 35, 50 15 S 80 30, 95 10 S 110 25, 115 20" />
+      </svg>
+      <p class="overlay-title" id="overlayTitle">사진을 읽고 있어요</p>
+      <p class="overlay-sub" id="overlaySub">잠시만 기다려 주세요</p>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
